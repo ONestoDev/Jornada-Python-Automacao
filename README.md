@@ -1,88 +1,64 @@
 # Jornada Python Automacao
 
-Projeto de automacao com Python para cadastrar produtos em um sistema web a partir de uma planilha CSV.
+Repositorio com os projetos desenvolvidos durante a Jornada Python, cobrindo automacao, analise de dados, machine learning e um espaco para a evolucao do chatbot em tempo real.
 
-O script principal abre o navegador, acessa a pagina de login, preenche as credenciais e cadastra automaticamente cada produto listado no arquivo `produtos.csv`.
+## Projetos
 
-## Arquivos do projeto
-
-- `codigo.py`: script principal da automacao.
-- `produtos.csv`: base de produtos usada no cadastro.
-- `pegar_posicao.py`: script auxiliar para descobrir a posicao atual do mouse na tela.
-- `gabarito.py`: versao de referencia do passo a passo da automacao.
+| Projeto | Conteudo | Arquivos principais |
+| --- | --- | --- |
+| Projeto 1 - Automacao de Tarefas | Cadastro automatico de produtos em um sistema web a partir de um CSV | `codigo.py`, `gabarito.py`, `pegar_posicao.py`, `produtos.csv` |
+| Projeto 2 - Analisando Dados | Analise exploratoria de cancelamentos com notebook e visualizacoes | `inicial.ipynb`, `gabarito.ipynb`, `cancelamentos.csv` |
+| Projeto 3 - Previsao com Machine Learning | Classificacao e previsao de clientes com modelos de ML | `inicial.ipynb`, `gabarito.ipynb`, `clientes.csv`, `novos_clientes.csv` |
+| Projeto 4 - Chatbot com IA em Tempo Real | Pasta reservada para a evolucao do chatbot | atualmente sem arquivos versionados |
 
 ## Requisitos
 
-- Python 3 instalado.
-- Navegador Safari, conforme configurado no `codigo.py`.
-- Permissao de acessibilidade para o terminal ou IDE controlar mouse e teclado no macOS.
-- Bibliotecas Python:
-  - `pyautogui`
-  - `pandas`
+Os projetos usam bibliotecas diferentes. Em geral, voce vai precisar de:
+
+- Python 3
+- `pandas`
+- `pyautogui`
+- `plotly`
+- `scikit-learn`
+- `openpyxl`
+- `nbformat`
+- `ipykernel`
 
 ## Instalacao
 
-Crie e ative um ambiente virtual, se desejar:
+Crie e ative um ambiente virtual:
 
 ```bash
-python3 -m venv .venv
-source .venv/bin/activate
+python -m venv .venv
+.venv\Scripts\activate
 ```
 
-Instale as dependencias:
+Instale as dependencias mais comuns:
 
 ```bash
-pip install pyautogui pandas
+pip install pandas pyautogui plotly scikit-learn openpyxl nbformat ipykernel
 ```
-
-## Configuracao
-
-Antes de executar, edite as variaveis no inicio do arquivo `codigo.py`:
-
-```python
-link = "https://dlp.hashtagtreinamentos.com/python/intensivao/login"
-email = "seu_email@mail.com"
-senha = "sua_senha"
-```
-
-Substitua `email` e `senha` pelas credenciais corretas do sistema.
 
 ## Como executar
 
-Com o ambiente configurado, execute:
+### Projeto 1
 
 ```bash
-python codigo.py
+python "Projeto 1 - Automacao de Tarefas\codigo.py"
 ```
 
-Durante a execucao, evite mexer no mouse ou teclado. O PyAutoGUI usa coordenadas fixas da tela, entao qualquer mudanca de janela, zoom, resolucao ou navegador pode afetar os cliques.
-
-## Ajuste de coordenadas
-
-Se os cliques nao estiverem acertando os campos corretos, use o script auxiliar:
+Se necessario, use o auxiliar para descobrir coordenadas do mouse:
 
 ```bash
-python pegar_posicao.py
+python "Projeto 1 - Automacao de Tarefas\pegar_posicao.py"
 ```
 
-Depois de executar, posicione o mouse sobre o ponto desejado antes da contagem terminar. O script imprime a coordenada atual do mouse, que pode ser usada para ajustar chamadas como:
+### Projetos 2 e 3
 
-```python
-pyautogui.click(x=685, y=451)
-```
-
-## Estrutura esperada do CSV
-
-O arquivo `produtos.csv` deve conter as seguintes colunas:
-
-```text
-codigo,marca,tipo,categoria,preco_unitario,custo,obs
-```
-
-Cada linha representa um produto que sera cadastrado automaticamente.
+Abra os notebooks em Jupyter, VS Code ou PyCharm e execute as celulas normalmente.
 
 ## Observacoes
 
-- O fluxo atual foi configurado para macOS, usando `command + space` para abrir o Safari.
-- Em Windows, o proprio `codigo.py` possui um trecho comentado com uma alternativa usando a tecla `win` e o Chrome.
-- Como a automacao depende da interface visual, valide as coordenadas antes de rodar o cadastro completo.
+- O Projeto 1 foi montado para automacao por coordenadas de tela; pequenas mudancas de resolucao, zoom ou janela podem afetar os cliques.
+- O fluxo do Projeto 1 usa Safari no macOS, mas o arquivo `codigo.py` tambem possui alternativa comentada para Windows.
+- Os arquivos CSV devem permanecer nas pastas dos respectivos projetos para que os notebooks e scripts encontrem os dados corretamente.
