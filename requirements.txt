@@ -1,0 +1,11 @@
+flask
+flask-socketio
+simple-websocket
+streamlit
+openai
+pyautogui
+pandas
+plotly
+scikit-learn
+ipython
+jupyter
